@@ -258,7 +258,7 @@ border-style: solid;color: white;" >
 $row = $result->fetch_assoc();
 
 ?>
-<form class="formulario" action="edicion_curso.php?ID_Curso=<?php echo $row['ID_Curso']?>"  method="POST" id="form" enctype="multipart/form-data">
+<form class="formulario" action="edicion_curso-video.php?ID_Curso=<?php echo $row['ID_Curso']?>"  method="POST" id="form" enctype="multipart/form-data">
 
 <div class="input-contenedor">
 <label for="">Titulo del Curso</label>
@@ -353,6 +353,16 @@ $row = $result->fetch_assoc();
 <label for="">Niveles del Curso</label>
 <input type="number" name="Niveles_Curso" id="Niveles_Curso" placeholder="Niveles del curso" value="<?php echo $row['Niveles_Curso'];?>">
 </div>
+
+<video width="400" controls>
+    <source src="<?php echo $row["path_video"]; ?>" type="<?php echo $row["content_type"]; ?>">
+              Tu navegador no soporta la etiqueta de video HTML5.
+ 
+ 
+</video>
+
+<h1>video</h1></label> <input type="file" name="video" id="video"><br><br>
+
 
 <?php 
 

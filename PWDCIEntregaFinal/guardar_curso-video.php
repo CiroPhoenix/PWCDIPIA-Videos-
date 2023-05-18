@@ -64,6 +64,7 @@ if (!$resultado) {
 
   // Mostrar mensaje de éxito
   echo "El vídeo se ha subido con éxito.";
+  header("location:indexMaestro.php");
 
   // Cerrar la conexión a la base de datos
   mysqli_close($conn);
