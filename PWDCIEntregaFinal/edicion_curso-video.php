@@ -28,7 +28,7 @@ $fila = mysqli_fetch_assoc($resultado);
 $id_video = intval($fila["siguiente_id"]);
 
 //Obtener
-$Niveles_Curso =$_POST['Niveles_Curso'];
+
 $Costo_Curso =$_POST['Costo_Curso'];
 $Descripcion_Curso =$_POST['Descripcion_Curso'];
 
@@ -54,7 +54,7 @@ if (move_uploaded_file($_FILES["video"]["tmp_name"], $ruta_video)) {
 
 //$query ="CALL ModificarCurso('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso','$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
 //$query ="CALL ModificarCurso($id, $Niveles_Curso, $Costo_Curso, '$Descripcion_Curso', '$Calificacion_Curso', '$Foto_Curso', '$Titulo_Curso', '$Foto_Curso2', '$Foto_Curso3', '$Categoria_Curso')";
- $query ="CALL ModificarCurso($id, $Niveles_Curso, $Costo_Curso, '$Descripcion_Curso', '$Foto_Curso', '$Titulo_Curso', '$Foto_Curso2', '$Foto_Curso3', '$Categoria_Curso', '$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
+ $query ="CALL ModificarCurso($id, $Costo_Curso, '$Descripcion_Curso', '$Foto_Curso', '$Titulo_Curso', '$Foto_Curso2', '$Foto_Curso3', '$Categoria_Curso', '$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
 //$query = "INSERT INTO curso(Instructor_Curso, Niveles_Curso, Costo_Curso, Descripcion_Curso, Calificacion_Curso, Foto_Curso, Titulo_Curso, Foto_Curso2, Foto_Curso3, Categoria_Curso, path_video, nombre_video, type_video, content_type, nombre_usuario) VALUES ('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso''$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
 
 $resultado = $conn->query($query);

@@ -81,7 +81,7 @@ select * from curso;
 select * from usuario;
 alter table curso modify column `Foto_Curso` LONGBLOB NOT NULL;
 alter table curso modify column `Foto_Curso2` LONGBLOB NOT NULL;
-alter table curso modify column  `Calificacion_Curso` INT(2);
+alter table curso modify column   `Niveles_Curso` INT;
 
 alter table curso add column `Categoria_Curso` VARCHAR(255);
 
@@ -89,7 +89,7 @@ alter table curso add column `Categoria_Curso` VARCHAR(255);
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`curso` (
   `ID_Curso` INT NOT NULL AUTO_INCREMENT,
   `Instructor_Curso` INT NOT NULL,
-  `Niveles_Curso` INT NOT NULL,
+  `Niveles_Curso` INT,
   `Costo_Curso` DECIMAL NOT NULL,
   `Descripcion_Curso` VARCHAR(100) NOT NULL,
   `Calificacion_Curso` INT(2),

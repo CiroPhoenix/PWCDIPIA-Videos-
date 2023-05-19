@@ -324,10 +324,6 @@ border-style: solid;color: white;" >
 <input type="number" name="Costo_Curso" id="Costo_Curso" placeholder="Precio del curso">
 </div>
 
-<div class="input-contenedor">
-<label for="">Niveles del Curso</label>
-<input type="number" name="Niveles_Curso" id="Niveles_Curso" placeholder="Niveles del curso">
-</div>
 
 <h1>video</h1></label> <input type="file" name="video" id="video"><br><br>
 

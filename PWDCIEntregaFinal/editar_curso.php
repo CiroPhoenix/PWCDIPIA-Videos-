@@ -345,10 +345,7 @@ $row = $result->fetch_assoc();
 <input type="number" name="Costo_Curso" id="Costo_Curso" placeholder="Precio del curso" value="<?php echo $row['Costo_Curso'];?>">
 </div>
 
-<div class="input-contenedor">
-<label for="">Niveles del Curso</label>
-<input type="number" name="Niveles_Curso" id="Niveles_Curso" placeholder="Niveles del curso" value="<?php echo $row['Niveles_Curso'];?>">
-</div>
+
 
 <video width="400" controls>
     <source src="<?php echo $row["path_video"]; ?>" type="<?php echo $row["content_type"]; ?>">

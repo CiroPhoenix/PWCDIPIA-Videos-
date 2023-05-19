@@ -9,7 +9,7 @@ if(!isset($_SESSION['Nombre_Usuario'])){
 }
 
 $id_usuario = $_SESSION['ID_Usuario'];
-$Niveles_Curso =$_POST['Niveles_Curso'];
+
 $Costo_Curso =$_POST['Costo_Curso'];
 $Descripcion_Curso =$_POST['Descripcion_Curso'];
 $Calificacion_Curso =$_POST['Calificacion_Curso'];
@@ -20,7 +20,7 @@ $Foto_Curso3 = addslashes(file_get_contents($_FILES['Foto_Curso3']['tmp_name']))
 $Categoria_Curso =$_POST['Categoria_Curso'];
 
 
-$query ="CALL AgregarCurso('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso')";
+$query ="CALL AgregarCurso('$id_usuario','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso')";
 $resultado = $conn->query($query);
 
 if($resultado){
