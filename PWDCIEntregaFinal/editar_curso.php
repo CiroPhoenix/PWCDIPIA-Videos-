@@ -286,10 +286,6 @@ $row = $result->fetch_assoc();
 
 
 
-<div class="input-contenedor">
-<label for="">Calificacion del Curso</label>
-<input type="number" name="Calificacion_Curso" id="Calificacion_Curso" placeholder="Calificacion del curso" value="<?php echo $row['Calificacion_Curso'];?>">
-</div>
 
 
 

@@ -31,7 +31,7 @@ $id_video = intval($fila["siguiente_id"]);
 $Niveles_Curso =$_POST['Niveles_Curso'];
 $Costo_Curso =$_POST['Costo_Curso'];
 $Descripcion_Curso =$_POST['Descripcion_Curso'];
-$Calificacion_Curso =$_POST['Calificacion_Curso'];
+
 $Foto_Curso = addslashes(file_get_contents($_FILES['Foto_Curso']['tmp_name']));
 $Titulo_Curso =$_POST['Titulo_Curso'];
 $Foto_Curso2 = addslashes(file_get_contents($_FILES['Foto_Curso2']['tmp_name']));
@@ -52,7 +52,7 @@ if (!is_dir("videosCurso/" . $nombre_usuario)) {
 if (move_uploaded_file($_FILES["video"]["tmp_name"], $ruta_video)) {
     // Insertar los datos del video en la base de datos
 
-$query ="CALL AgregarCurso('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso','$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
+$query ="CALL AgregarCurso('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso','$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";
 
 
 //$query = "INSERT INTO curso(Instructor_Curso, Niveles_Curso, Costo_Curso, Descripcion_Curso, Calificacion_Curso, Foto_Curso, Titulo_Curso, Foto_Curso2, Foto_Curso3, Categoria_Curso, path_video, nombre_video, type_video, content_type, nombre_usuario) VALUES ('$id_usuario','$Niveles_Curso','$Costo_Curso','$Descripcion_Curso','$Calificacion_Curso','$Foto_Curso','$Titulo_Curso','$Foto_Curso2','$Foto_Curso3','$Categoria_Curso''$ruta_video', '$nombre_video', '$tipo_video', '$tipo_video','$nombre_usuario')";

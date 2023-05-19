@@ -346,17 +346,15 @@ border-style: solid;" >
 <h5  class="card-title"><?php echo $filas['Titulo_Curso']?></h5>
 <span class="text-success"><?php echo $filas['Costo_Curso']?>MX</span>
 </div>
-<p class="card-text" style="font-size: 14px;">Calificacion: <?php echo $filas['Niveles_Curso']?></p>
+
 
 
 
 <div class="d-flex justify-content-between">
 <a class="bg-dark text-white text-center pl-2 pr-2" href="editar_curso.php?ID_Curso=<?php echo $filas['ID_Curso']?>"> Editar</a>
 <a  class="bg-dark text-white text-center pl-2 pr-2" href="DetallesDelCurso.php?ID_Curso=<?php echo $filas['ID_Curso']?>">Ver Curso</a>
+<a  class="bg-dark text-white text-center pl-2 pr-2" href="Agregar_Nivel.php?ID_Curso=<?php echo $filas['ID_Curso']?>">AgregarNiveles</a>
 
-        
-
-<div class="bg-dark text-white text-center pl-2 pr-2">Eliminar</div>
 </div>
    </div>
  </div>

@@ -81,9 +81,10 @@ select * from curso;
 select * from usuario;
 alter table curso modify column `Foto_Curso` LONGBLOB NOT NULL;
 alter table curso modify column `Foto_Curso2` LONGBLOB NOT NULL;
-alter table curso modify column `Foto_Curso3` LONGBLOB NOT NULL;
+alter table curso modify column  `Calificacion_Curso` INT(2);
 
 alter table curso add column `Categoria_Curso` VARCHAR(255);
+
 
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`curso` (
   `ID_Curso` INT NOT NULL AUTO_INCREMENT,
@@ -91,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`curso` (
   `Niveles_Curso` INT NOT NULL,
   `Costo_Curso` DECIMAL NOT NULL,
   `Descripcion_Curso` VARCHAR(100) NOT NULL,
-  `Calificacion_Curso` INT(2) NOT NULL,
+  `Calificacion_Curso` INT(2),
   `Foto_Curso` LONGBLOB NOT NULL,
   `Foto_Curso2` LONGBLOB NOT NULL,
   `Foto_Curso3` LONGBLOB NOT NULL,
@@ -106,6 +107,23 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`curso` (
   PRIMARY KEY (`ID_Curso`),
   FOREIGN KEY (`Instructor_Curso`)
   REFERENCES `proyecto_bdm`.`usuario` (`ID_Usuario`));
+  
+  alter table niveles modify column idnivel INT NOT NULL AUTO_INCREMENT;
+  
+  alter table niveles modify column `idnivel` int auto_increment;
+  
+  select * from niveles;
+  
+  CREATE TABLE niveles (
+  `idnivel` int(11) NOT NULL,
+  `nivel_nombre` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nivelpadre_id` int,
+  `Curso` int,
+  foreign key(Curso)references curso(ID_Curso),
+  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  
   
   
 

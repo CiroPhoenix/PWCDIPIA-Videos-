@@ -271,11 +271,6 @@ border-style: solid;color: white;" >
 
 
 
-<div class="input-contenedor">
-<label for="">Calificacion del Curso</label>
-<input type="number" name="Calificacion_Curso" id="Calificacion_Curso" placeholder="Calificacion del curso">
-</div>
-
 
 
 <div class="contenedor">

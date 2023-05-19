@@ -1,9 +1,11 @@
 delimiter //
-create procedure AgregarCurso(InstructorCurso INT, NivelesCurso int, CostoCurso decimal, DescripcionCurso varchar(100), CalificacionCurso  INT(2),FotoCurso LONGBLOB,TituloCurso VARCHAR(45),FotoCurso2 LONGBLOB,FotoCurso3 LONGBLOB,CategoriaCurso VARCHAR(255),path_video VARCHAR(100),nombre_video VARCHAR(100),type_video VARCHAR(50), content_type VARCHAR(50), nombre_usuario VARCHAR(100))
+create procedure AgregarCurso(InstructorCurso INT, NivelesCurso int, CostoCurso decimal, DescripcionCurso varchar(100), FotoCurso LONGBLOB,TituloCurso VARCHAR(45),FotoCurso2 LONGBLOB,FotoCurso3 LONGBLOB,CategoriaCurso VARCHAR(255),path_video VARCHAR(100),nombre_video VARCHAR(100),type_video VARCHAR(50), content_type VARCHAR(50), nombre_usuario VARCHAR(100))
 begin 
-INSERT INTO curso(Instructor_Curso, Niveles_Curso, Costo_Curso, Descripcion_Curso, Calificacion_Curso, Foto_Curso, Titulo_Curso, Foto_Curso2, Foto_Curso3,Categoria_Curso,path_video,nombre_video,type_video,content_type,nombre_usuario) VALUES (InstructorCurso, NivelesCurso, CostoCurso,  DescripcionCurso, CalificacionCurso, FotoCurso,TituloCurso,FotoCurso2,FotoCurso3,CategoriaCurso,path_video,nombre_video,type_video,content_type,nombre_usuario);
+INSERT INTO curso(Instructor_Curso, Niveles_Curso, Costo_Curso, Descripcion_Curso, Foto_Curso, Titulo_Curso, Foto_Curso2, Foto_Curso3,Categoria_Curso,path_video,nombre_video,type_video,content_type,nombre_usuario) VALUES (InstructorCurso, NivelesCurso, CostoCurso,  DescripcionCurso, FotoCurso,TituloCurso,FotoCurso2,FotoCurso3,CategoriaCurso,path_video,nombre_video,type_video,content_type,nombre_usuario);
 end//
 delimiter ;
+
+drop procedure AgregarCurso;
 
 
 delimiter //
@@ -36,13 +38,13 @@ end//
 delimiter ;
 
 delimiter //
-create procedure ModificarCurso(IDCurso INT, NivelesCurso int, CostoCurso decimal, DescripcionCurso varchar(100), CalificacionCurso  INT(2), FotoCurso LONGBLOB,TituloCurso VARCHAR(45),FotoCurso2 LONGBLOB,FotoCurso3 LONGBLOB,CategoriaCurso VARCHAR(255), path_video VARCHAR(100),nombre_video VARCHAR(100),type_video VARCHAR(50), content_type VARCHAR(50), nombre_usuario VARCHAR(100))
+create procedure ModificarCurso(IDCurso INT, NivelesCurso int, CostoCurso decimal, DescripcionCurso varchar(100), FotoCurso LONGBLOB,TituloCurso VARCHAR(45),FotoCurso2 LONGBLOB,FotoCurso3 LONGBLOB,CategoriaCurso VARCHAR(255), path_video VARCHAR(100),nombre_video VARCHAR(100),type_video VARCHAR(50), content_type VARCHAR(50), nombre_usuario VARCHAR(100))
 begin 
-UPDATE curso set Niveles_Curso=NivelesCurso, Costo_Curso=CostoCurso, Descripcion_Curso=DescripcionCurso, Calificacion_Curso=CalificacionCurso, Foto_Curso=FotoCurso, Titulo_Curso=TituloCurso, Foto_Curso2=FotoCurso2, Foto_Curso3=FotoCurso3,Categoria_Curso=CategoriaCurso, path_video=path_video, nombre_video=nombre_video, type_video=type_video, content_type=content_type, nombre_usuario=nombre_usuario   WHERE ID_Curso = IDCurso;
+UPDATE curso set Niveles_Curso=NivelesCurso, Costo_Curso=CostoCurso, Descripcion_Curso=DescripcionCurso, Foto_Curso=FotoCurso, Titulo_Curso=TituloCurso, Foto_Curso2=FotoCurso2, Foto_Curso3=FotoCurso3,Categoria_Curso=CategoriaCurso, path_video=path_video, nombre_video=nombre_video, type_video=type_video, content_type=content_type, nombre_usuario=nombre_usuario   WHERE ID_Curso = IDCurso;
 end//
 delimiter ;
 
-
+drop procedure ModificarCurso;
 
 execute VerUsuarios;
 delimiter //

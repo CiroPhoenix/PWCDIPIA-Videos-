@@ -18,6 +18,23 @@ $sql ="SELECT * from curso WHERE ID_Curso='$id'";
 $result=mysqli_query($conn,$sql);
 
 
+function categoryTree($parent_id = 0, $sub_mark = ''){
+  global $conn;
+  
+  $ID= $_REQUEST['ID_Curso'];
+  $query = $conn->query("SELECT * FROM niveles WHERE nivelpadre_id = $parent_id AND Curso = $ID ORDER BY nivel_nombre ASC");
+  if($query->num_rows > 0){
+      while($row = $query->fetch_assoc()){
+          echo '<option value="'.$row['idnivel'].'">'.$sub_mark.$row['nivel_nombre'].'</option>';
+         
+          categoryTree($row['idnivel'], $sub_mark.'-');
+ 
+         
+      }
+  }
+}
+
+
 ?>
 
 
@@ -278,6 +295,8 @@ $filas = $result->fetch_assoc();
 
 
 
+
+<?php categoryTree(); ?>
 
 <div class="d-grid gap-3 col-10 mx-auto">
     <button class="btn btn-primary" type="button">Comprar Ahora</button>
