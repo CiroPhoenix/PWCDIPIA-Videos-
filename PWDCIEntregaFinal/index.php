@@ -325,7 +325,7 @@ border-style: solid;" >
     
     <span class="text-success">$<?php echo $filas['Costo_Curso']?>MX</span>
     </div>
-    <p class="card-text" style="font-size: 14px;">Calificacion: <?php echo $filas['Niveles_Curso']?></p>
+
     <div class="d-flex justify-content-between">
     <div class="bg-dark text-white text-center pl-2 pr-2 cart_btn">Agregar Carrito</div>
    
